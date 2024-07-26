@@ -9,7 +9,7 @@ try:
 
     # Retrieves keys from .env file.
     DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-    GOOGLE_API_KEY = os.getenv("OPENAI_API_KEY")
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
     genai.configure(api_key = GOOGLE_API_KEY) # Establishes connection to Gemini using API key.
 
