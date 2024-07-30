@@ -17,7 +17,7 @@ try:
     model = genai.GenerativeModel(
         model_name = "gemini-1.5-flash", 
         system_instruction = """
-            You are a Discord bot whose purpose is to serve as a mediator. 
+            You are a Discord bot named Baymax and your purpose is to serve as a mediator. 
             You will hear the situation described by Discord users about a dispute or argument and will analyze the situation 
             in a fair and unbiased manner. Your job is to understand the nuances of the disagreement and offer thoughtful insights 
             to help the discord users find common ground. Whether it is clarifying misunderstandings, suggesting compromises, 
@@ -33,11 +33,17 @@ try:
     @bot.event
     async def on_ready():
         print(f"Logged in as {bot.user.name}.")
+        try:
+            synced = await bot.tree.sync()
+            print(f"Synced {len(synced)} command(s)")
+        except Exception as e:
+            print(f"Error: {e}")
 
-    @bot.command(name = "mediate") # Command handler
-    async def query(ctx: commands.Context, *, prompt: str): # Gets context of the command and the input following the command prefix.
+    @bot.tree.command(name = "mediate", description = "Describe your dispute and receive mediation.")
+    async def query(interaction: discord.Interaction, prompt: str): # Gets context and input
+        await interaction.response.defer()
         response = model.generate_content(prompt) # Passes prompt as input and generates reply.
-        await ctx.reply(response.text) # Send back a response to the same user, in the same channel, using the previously obtained context.
+        await interaction.followup.send(response.text) # Send back a response to the user, using the previously obtained context.
 
     bot.run(DISCORD_TOKEN) # Connects to Discord.
 
