@@ -16,7 +16,7 @@ A Discord bot developed in Python that is designed to help mediate disputes amon
 
 ### Preview:
 
-<img src="https://github.com/user-attachments/assets/476e92d9-51b3-47ac-9e68-7c9af6ac1de1" alt="DiscordBotBanner" width="300"/>
+<img src="https://github.com/user-attachments/assets/476e92d9-51b3-47ac-9e68-7c9af6ac1de1" alt="DiscordBotBanner" width="350"/>
 <img src="https://github.com/user-attachments/assets/a6c858c2-21b7-47c0-88a4-b817e02f7ff0" alt="DiscordBotExample1" width="500"/>
 <img src="https://github.com/user-attachments/assets/5ab0cec6-54e2-4e6d-a5bb-b179a7658cf4" alt="DiscordBotExample2" width="500"/>
 <img src="https://github.com/user-attachments/assets/d02fc650-71c7-4205-a4b0-9a86e62358cf" alt="DiscordBotExample3" width="500"/>
